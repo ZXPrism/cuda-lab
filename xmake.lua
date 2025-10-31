@@ -8,6 +8,8 @@ target("radix_sort")
     set_warnings("all", "extra", "pedantic")
 
     add_files("src/radix_sort.cu")
+    add_cugencodes("native")
+    add_cugencodes("compute_120")
 
     after_build(function (target)
         os.cp(target:targetfile(), "bin/")
